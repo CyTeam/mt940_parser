@@ -50,7 +50,7 @@ class MT940
     private
       def parse_amount_in_cents(amount)
         # don't use Integer(amount) function, because amount can be "008" - interpreted as octal number ("010" = 8)
-        amount.gsub(',', '').to_i
+        BigDecimal.new(amount.gsub(',', '.')) * 100
       end
 
       def parse_date(date)
