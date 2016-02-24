@@ -6,8 +6,9 @@ require 'mt940/customer_statement_message'
 # TODO: Add a method to get the currency of the account.
 
 describe MT940::CustomerStatementMessage do
+  subject { MT940::CustomerStatementMessage }
   let(:file) { File.dirname(__FILE__) + '/fixtures/sepa_snippet.txt' }
-  let(:messages) { MT940::CustomerStatementMessage.parse_file(file) }
+  let(:messages) { subject.parse_file(file) }
   let(:message) { messages.first }
   let(:message_2) { messages.last }
 
@@ -35,7 +36,7 @@ describe MT940::CustomerStatementMessage do
                ACCOUNT DESCRIPTION:  CURR
                -"
 
-    statement = MT940::CustomerStatementMessage.parse(message).first
+    statement = subject.parse(message).first
     expect(statement.narrative).to eq(['NAME ACCOUNT OWNER:SOME ENTITY',
                                        'ACCOUNT DESCRIPTION:  CURR'])
   end
@@ -103,7 +104,7 @@ describe MT940::CustomerStatementMessage do
   end
 
   it 'parses a message file into individual statements' do
-    messages = MT940::CustomerStatementMessage.parse_file(file)
+    messages = subject.parse_file(file)
     expect(messages.size).to eq(2)
     expect(messages[0].account_number).to eq('0194787400888')
     expect(messages[1].account_number).to eq('0194791600888')
@@ -112,6 +113,11 @@ describe MT940::CustomerStatementMessage do
   it 'fails when it parses a file with a broken structure' do
     file = File.dirname(__FILE__) + '/fixtures/sepa_snippet_broken.txt'
     # TODO: I think raising a more specific error is better.
-    expect { MT940::CustomerStatementMessage.parse_file(file) }.to raise_error StandardError
+    expect { subject.parse_file(file) }.to raise_error StandardError
+  end
+
+  it 'parses mt940 within curved brackets' do
+    file = File.dirname(__FILE__) + '/fixtures/bracket_example.txt'
+    expect { subject.parse_file file }.not_to raise_error StandardError
   end
 end
