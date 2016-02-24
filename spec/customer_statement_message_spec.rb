@@ -118,6 +118,6 @@ describe MT940::CustomerStatementMessage do
 
   it 'parses mt940 within curved brackets' do
     file = File.dirname(__FILE__) + '/fixtures/bracket_example.txt'
-    expect { subject.parse_file file }.not_to raise_error StandardError
+    expect { subject.parse_file file }.not_to raise_error StandardError, /Wrong line format/i
   end
 end

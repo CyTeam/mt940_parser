@@ -330,8 +330,13 @@ class MT940
 
     private
 
+    def get_sheet_content(sheet)
+      content_matcher = /{\s*4:([^}]+)/m
+      (sheet.scan(content_matcher).flatten.first || sheet).strip
+    end
+
     def parse_sheet(sheet)
-      lines = sheet.split(/\r?\n\s*(?=:)/)
+      lines = get_sheet_content(sheet).split(/\r?\n\s*(?=:)/)
       fields = lines.reject(&:empty?).map { |line| Field.for(line) }
       fields
     end
