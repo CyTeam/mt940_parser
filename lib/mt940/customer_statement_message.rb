@@ -2,13 +2,11 @@
 # MT940.parse command. use it in order to make dealing with
 # the data easier
 class MT940
-
   class CustomerStatementMessage
-
     attr_reader :statement_lines
 
     def self.parse_file(file)
-      self.parse(File.read(file))
+      parse(File.read(file))
     end
 
     def self.parse(data)
@@ -22,8 +20,8 @@ class MT940
       @statement_lines = []
       @raw.each_with_index do |line, i|
         next unless line.class == MT940::StatementLine
-        ensure_is_info_line!(@raw[i+1])
-        @statement_lines << StatementLineBundle.new(@raw[i], @raw[i+1])
+        ensure_is_info_line!(@raw[i + 1])
+        @statement_lines << StatementLineBundle.new(@raw[i], @raw[i + 1])
       end
     end
 
@@ -47,32 +45,29 @@ class MT940
         raise StandardError, "Unexpected Structure; expected StatementLineInformation, but was #{line.class}"
       end
     end
-
   end
 
   class StatementLineBundle
-
     METHOD_MAP = {
-      :amount         => :line,
-      :funds_code     => :line,
-      :value_date     => :line,
-      :entry_date     => :line,
-      :account_holder => :info,
-      :details        => :info,
-      :account_number => :info,
-      :bank_code      => :info,
-    }
+      amount: :line,
+      funds_code: :line,
+      value_date: :line,
+      entry_date: :line,
+      account_holder: :info,
+      details: :info,
+      account_number: :info,
+      bank_code: :info
+    }.freeze
 
     def initialize(statement_line, statement_line_info)
-      @line, @info = statement_line, statement_line_info
+      @line = statement_line
+      @info = statement_line_info
     end
 
     def method_missing(method, *args, &block)
-      super unless METHOD_MAP.has_key?(method)
+      super unless METHOD_MAP.key?(method)
       object = instance_variable_get("@#{METHOD_MAP[method.to_sym]}")
       object.send(method)
     end
-
   end
-
 end
