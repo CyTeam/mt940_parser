@@ -4,126 +4,125 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "mt940_parser"
-  s.version = "1.1.0"
+  s.name = 'mt940_parser'
+  s.version = '1.1.0'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Thies C. Arntzen", "Phillip Oertel"]
-  s.date = "2012-05-31"
-  s.email = "developers@betterplace.org"
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  s.authors = ['Thies C. Arntzen', 'Phillip Oertel']
+  s.date = '2012-05-31'
+  s.email = 'developers@betterplace.org'
   s.extra_rdoc_files = [
-    "LICENSE",
-    "README.rdoc"
+    'LICENSE',
+    'README.rdoc'
   ]
   s.files = [
-    ".document",
-    ".rspec",
-    ".rvmrc",
-    ".specification",
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION.yml",
-    "docs/0E0Y00DNY.pdf",
-    "docs/FinTS_4.0_Formals.pdf",
-    "docs/FinTS_4.0_Messages_Finanzdatenformate.pdf",
-    "docs/MT940_Deutschland_Structure2002.pdf",
-    "docs/SEPA_20MT940__Schnittstellenbeschreibung.pdf",
-    "docs/mt940.pdf",
-    "docs/swift_mt940_942.pdf",
-    "docs/uebersicht_der_geschaeftsvorfallcodes_und_buchungs_textschluessel.pdf",
-    "lib/mt940.rb",
-    "lib/mt940/customer_statement_message.rb",
-    "mt940_parser.gemspec",
-    "spec/customer_statement_message_spec.rb",
-    "spec/fixtures/currency_in_25.txt",
-    "spec/fixtures/currency_in_25.yml",
-    "spec/fixtures/empty_86.txt",
-    "spec/fixtures/empty_86.yml",
-    "spec/fixtures/empty_entry_date.txt",
-    "spec/fixtures/empty_entry_date.yml",
-    "spec/fixtures/empty_line.txt",
-    "spec/fixtures/empty_line.yml",
-    "spec/fixtures/missing_crlf_at_end.txt",
-    "spec/fixtures/missing_crlf_at_end.yml",
-    "spec/fixtures/sepa_mt9401.txt",
-    "spec/fixtures/sepa_mt9401.yml",
-    "spec/fixtures/sepa_snippet.txt",
-    "spec/fixtures/sepa_snippet_broken.txt",
-    "spec/fixtures/with_binary_character.txt",
-    "spec/fixtures/with_binary_character.yml",
-    "spec/mt940_spec.rb",
-    "spec/spec_helper.rb",
-    "test/fixtures/currency_in_25.txt",
-    "test/fixtures/currency_in_25.yml",
-    "test/fixtures/empty_86.txt",
-    "test/fixtures/empty_86.yml",
-    "test/fixtures/empty_entry_date.txt",
-    "test/fixtures/empty_entry_date.yml",
-    "test/fixtures/empty_line.txt",
-    "test/fixtures/empty_line.yml",
-    "test/fixtures/missing_crlf_at_end.txt",
-    "test/fixtures/missing_crlf_at_end.yml",
-    "test/fixtures/sepa_mt9401.txt",
-    "test/fixtures/sepa_mt9401.yml",
-    "test/fixtures/sepa_snippet.txt",
-    "test/fixtures/sepa_snippet_broken.txt",
-    "test/fixtures/with_binary_character.txt",
-    "test/fixtures/with_binary_character.yml",
-    "test/helper.rb",
-    "test/test_customer_statement_message.rb",
-    "test/test_mt940.rb"
+    '.document',
+    '.rspec',
+    '.rvmrc',
+    '.specification',
+    'Gemfile',
+    'Gemfile.lock',
+    'LICENSE',
+    'README.rdoc',
+    'Rakefile',
+    'VERSION.yml',
+    'docs/0E0Y00DNY.pdf',
+    'docs/FinTS_4.0_Formals.pdf',
+    'docs/FinTS_4.0_Messages_Finanzdatenformate.pdf',
+    'docs/MT940_Deutschland_Structure2002.pdf',
+    'docs/SEPA_20MT940__Schnittstellenbeschreibung.pdf',
+    'docs/mt940.pdf',
+    'docs/swift_mt940_942.pdf',
+    'docs/uebersicht_der_geschaeftsvorfallcodes_und_buchungs_textschluessel.pdf',
+    'lib/mt940.rb',
+    'lib/mt940/customer_statement_message.rb',
+    'mt940_parser.gemspec',
+    'spec/customer_statement_message_spec.rb',
+    'spec/fixtures/currency_in_25.txt',
+    'spec/fixtures/currency_in_25.yml',
+    'spec/fixtures/empty_86.txt',
+    'spec/fixtures/empty_86.yml',
+    'spec/fixtures/empty_entry_date.txt',
+    'spec/fixtures/empty_entry_date.yml',
+    'spec/fixtures/empty_line.txt',
+    'spec/fixtures/empty_line.yml',
+    'spec/fixtures/missing_crlf_at_end.txt',
+    'spec/fixtures/missing_crlf_at_end.yml',
+    'spec/fixtures/sepa_mt9401.txt',
+    'spec/fixtures/sepa_mt9401.yml',
+    'spec/fixtures/sepa_snippet.txt',
+    'spec/fixtures/sepa_snippet_broken.txt',
+    'spec/fixtures/with_binary_character.txt',
+    'spec/fixtures/with_binary_character.yml',
+    'spec/mt940_spec.rb',
+    'spec/spec_helper.rb',
+    'test/fixtures/currency_in_25.txt',
+    'test/fixtures/currency_in_25.yml',
+    'test/fixtures/empty_86.txt',
+    'test/fixtures/empty_86.yml',
+    'test/fixtures/empty_entry_date.txt',
+    'test/fixtures/empty_entry_date.yml',
+    'test/fixtures/empty_line.txt',
+    'test/fixtures/empty_line.yml',
+    'test/fixtures/missing_crlf_at_end.txt',
+    'test/fixtures/missing_crlf_at_end.yml',
+    'test/fixtures/sepa_mt9401.txt',
+    'test/fixtures/sepa_mt9401.yml',
+    'test/fixtures/sepa_snippet.txt',
+    'test/fixtures/sepa_snippet_broken.txt',
+    'test/fixtures/with_binary_character.txt',
+    'test/fixtures/with_binary_character.yml',
+    'test/helper.rb',
+    'test/test_customer_statement_message.rb',
+    'test/test_mt940.rb'
   ]
-  s.homepage = "http://github.com/betterplace/mt940_parser"
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.15"
-  s.summary = "MT940 parses account statements in the SWIFT MT940 format."
+  s.homepage = 'http://github.com/betterplace/mt940_parser'
+  s.licenses = ['MIT']
+  s.require_paths = ['lib']
+  s.rubygems_version = '1.8.15'
+  s.summary = 'MT940 parses account statements in the SWIFT MT940 format.'
   s.test_files = [
-    "spec/customer_statement_message_spec.rb",
-    "spec/mt940_spec.rb",
-    "spec/spec_helper.rb",
-    "test/helper.rb",
-    "test/test_customer_statement_message.rb",
-    "test/test_mt940.rb"
+    'spec/customer_statement_message_spec.rb',
+    'spec/mt940_spec.rb',
+    'spec/spec_helper.rb',
+    'test/helper.rb',
+    'test/test_customer_statement_message.rb',
+    'test/test_mt940.rb'
   ]
 
-  if s.respond_to? :specification_version then
+  if s.respond_to? :specification_version
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<awesome_print>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<ruby-debug>, [">= 0"])
-      s.add_development_dependency(%q<ruby-debug19>, [">= 0"])
-      s.add_development_dependency(%q<simplecov>, [">= 0"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<rdoc>, [">= 0"])
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0')
+      s.add_development_dependency('awesome_print', ['>= 0'])
+      s.add_development_dependency('rspec', ['>= 0'])
+      s.add_development_dependency('bundler', ['~> 1.0.0'])
+      s.add_development_dependency('jeweler', ['~> 1.5.2'])
+      s.add_development_dependency('ruby-debug', ['>= 0'])
+      s.add_development_dependency('ruby-debug19', ['>= 0'])
+      s.add_development_dependency('simplecov', ['>= 0'])
+      s.add_development_dependency('rcov', ['>= 0'])
+      s.add_development_dependency('rdoc', ['>= 0'])
     else
-      s.add_dependency(%q<awesome_print>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<ruby-debug>, [">= 0"])
-      s.add_dependency(%q<ruby-debug19>, [">= 0"])
-      s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<rdoc>, [">= 0"])
+      s.add_dependency('awesome_print', ['>= 0'])
+      s.add_dependency('rspec', ['>= 0'])
+      s.add_dependency('bundler', ['~> 1.0.0'])
+      s.add_dependency('jeweler', ['~> 1.5.2'])
+      s.add_dependency('ruby-debug', ['>= 0'])
+      s.add_dependency('ruby-debug19', ['>= 0'])
+      s.add_dependency('simplecov', ['>= 0'])
+      s.add_dependency('rcov', ['>= 0'])
+      s.add_dependency('rdoc', ['>= 0'])
     end
   else
-    s.add_dependency(%q<awesome_print>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<ruby-debug>, [">= 0"])
-    s.add_dependency(%q<ruby-debug19>, [">= 0"])
-    s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<rdoc>, [">= 0"])
+    s.add_dependency('awesome_print', ['>= 0'])
+    s.add_dependency('rspec', ['>= 0'])
+    s.add_dependency('bundler', ['~> 1.0.0'])
+    s.add_dependency('jeweler', ['~> 1.5.2'])
+    s.add_dependency('ruby-debug', ['>= 0'])
+    s.add_dependency('ruby-debug19', ['>= 0'])
+    s.add_dependency('simplecov', ['>= 0'])
+    s.add_dependency('rcov', ['>= 0'])
+    s.add_dependency('rdoc', ['>= 0'])
   end
 end
-

@@ -5,7 +5,7 @@ begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
+  $stderr.puts 'Run `bundle install` to install missing gems'
   exit e.status_code
 end
 require 'rake'
@@ -13,17 +13,17 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "mt940_parser"
-    gem.summary = %Q{MT940 parses account statements in the SWIFT MT940 format.}
-    gem.license = "MIT"
-    gem.email = "developers@betterplace.org"
-    gem.homepage = "http://github.com/betterplace/mt940_parser"
-    gem.authors = ["Thies C. Arntzen", "Phillip Oertel"]
+    gem.name = 'mt940_parser'
+    gem.summary = %(MT940 parses account statements in the SWIFT MT940 format.)
+    gem.license = 'MIT'
+    gem.email = 'developers@betterplace.org'
+    gem.homepage = 'http://github.com/betterplace/mt940_parser'
+    gem.authors = ['Thies C. Arntzen', 'Phillip Oertel']
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+  puts 'Jeweler (or a dependency) not available. Install it with: gem install jeweler'
 end
 
 require 'rake/testtask'
@@ -38,18 +38,18 @@ RSpec::Core::RakeTask.new(:rspec) do |t|
   t.rspec_opts = '--color --format documentation'
 end
 
-desc  "Run all specs with rcov"
+desc 'Run all specs with rcov'
 RSpec::Core::RakeTask.new(:rcov) do |t|
   t.rspec_opts = '--color --format documentation'
   t.rcov = true
   t.rcov_opts = '--exclude /gems/,spec'
 end
 
-task :default => :test
+task default: :test
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "mt940 #{version}"
