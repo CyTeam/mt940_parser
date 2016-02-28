@@ -1,4 +1,3 @@
-
 require 'date'
 require 'bigdecimal'
 require 'mt940/customer_statement_message'
