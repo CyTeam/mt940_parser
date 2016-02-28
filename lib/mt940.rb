@@ -1,3 +1,4 @@
+
 require 'date'
 require 'bigdecimal'
 require 'mt940/customer_statement_message'
@@ -327,11 +328,16 @@ class MT940
       raw_sheets.map { |raw_sheet| parse_sheet(raw_sheet) }
     end
 
-
     private
+
+    def get_sheet_content(sheet)
+      content_matcher = /{\s*4:([^}]+)/m
+      (sheet.scan(content_matcher).flatten.first || sheet).strip
+    end
+
     def parse_sheet(sheet)
-      lines = sheet.split(/\r?\n\s*(?=:)/)
-      fields = lines.reject { |line| line.empty? }.map { |line| Field.for(line) }
+      lines = get_sheet_content(sheet).split(/\r?\n\s*(?=:)/)
+      fields = lines.reject(&:empty?).map { |line| Field.for(line) }
       fields
     end
   end
